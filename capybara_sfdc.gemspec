@@ -14,4 +14,9 @@ Gem::Specification.new do |gem|
   gem.name          = "capybara_sfdc"
   gem.require_paths = ["lib"]
   gem.version       = CapybaraSfdc::VERSION
+
+  gem.add_dependency "capybara"
+  gem.add_dependency "databasedotcom"
+
+  gem.add_development_dependency "rspec"
 end
