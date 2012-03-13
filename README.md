@@ -28,6 +28,7 @@ require "capybara/dsl"
 require "capybara/rspec"
 require "caviidae/rspec"
 
+Capybara.default_driver = :selenium
 Capybara.app_host = 'http://myapp.com'
 
 Caviidae.configure do |config|
