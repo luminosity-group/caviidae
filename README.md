@@ -18,7 +18,7 @@ Or install it yourself as:
 
     $ gem install caviidae
 
-## Usage
+## RSpec Usage
 
 Include the following in your `spec_helper.rb`:
 
