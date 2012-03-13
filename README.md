@@ -37,7 +37,7 @@ Caviidae.configure do |config|
   config.password       = ENV['SFDC_PASSWORD']
   config.security_token = ENV['SFDC_SECURITY_TOKEN']
   # Specify any sObjects that should be materialized before running any tests.
-  # config.materialize    = ['User', 'Account']
+  config.materialize    = ['User', 'Account']
 end
 ```
 
