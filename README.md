@@ -63,7 +63,7 @@ Any records that get created from the frontend will need to be manually
 deleted. Something like this should work well enough:
 
 ```ruby
-it "Filling in valid attributes" do
+it "creates an order" do
   visit '/create_order'
   within('#form') do
       fill_in 'First name', :with => "TestXXX_First"
