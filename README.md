@@ -30,15 +30,6 @@ require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
 
-Capybara.register_driver :firefox_no_ssl do |app|
-  require 'selenium/webdriver'
-  profile = Selenium::WebDriver::Firefox::Profile.new
-  profile.assume_untrusted_certificate_issuer = false
-
-  Capybara::Selenium::Driver.new(app, :profile => profile)
-end
-
-Capybara.default_driver = :firefox_no_ssl
 Capybara.app_host = 'https://www.google.com'
 
 CapybaraSfdc.configure do |config|
