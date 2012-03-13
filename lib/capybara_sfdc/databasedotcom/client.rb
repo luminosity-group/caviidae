@@ -26,6 +26,7 @@ module Databasedotcom
     def cleanup
       created.each do |sobject|
         sobject.delete
+        sobject = nil
       end
       @created = []
     end
