@@ -23,4 +23,5 @@ Caviidae.configure do |config|
   config.username       = ENV['SFDC_USERNAME']
   config.password       = ENV['SFDC_PASSWORD']
   config.security_token = ENV['SFDC_SECURITY_TOKEN']
+  config.materialize    = ['User', 'Account']
 end

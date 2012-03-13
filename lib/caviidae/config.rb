@@ -25,9 +25,12 @@ module Caviidae
     attr_accessor :security_token
     # Login host. Defaults to login.salesforce.com
     attr_accessor :host
+    # An array of sobjects to materialize at the start
+    attr_accessor :materialize
 
     def initialize
       @security_token = "login.salesforce.com"
+      @materialize = []
     end
   end
 end

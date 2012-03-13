@@ -39,6 +39,9 @@ Caviidae.configure do |config|
   config.username       = ENV['SFDC_USERNAME']
   config.password       = ENV['SFDC_PASSWORD']
   config.security_token = ENV['SFDC_SECURITY_TOKEN']
+  # Specify any sObjects that should be materialized
+  # before running any tests.
+  # config.materialize    = ['User', 'Account']
 end
 ```
 
@@ -49,8 +52,6 @@ require 'spec_helper'
 
 describe "My App", :type => :request do
   let(:account) do
-    db.materialize('User')
-    db.materialize('Account')
     Account.new(:Name => 'test', :OwnerId => User.first.Id).save
   end
 
