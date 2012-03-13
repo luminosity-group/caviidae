@@ -23,15 +23,12 @@ Or install it yourself as:
 Include the following in your `spec_helper.rb`:
 
 ```ruby
-require "bundler"
-Bundler.require :default, :development
-require "pp"
 require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
 require "caviidae/rspec"
 
-Capybara.app_host = 'https://www.google.com'
+Capybara.app_host = 'http://myapp.com'
 
 Caviidae.configure do |config|
   config.client_id      = ENV['SFDC_CLIENT_ID']
