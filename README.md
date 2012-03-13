@@ -66,8 +66,8 @@ deleted. Something like this should work well enough:
 it "creates an order" do
   visit '/create_order'
   within('#form') do
-      fill_in 'First name', :with => "TestXXX_First"
-      fill_in 'Amount', :with => 1
+    fill_in 'First name', :with => "TestXXX_First"
+    fill_in 'Amount', :with => 1
   end
   click_on 'Submit'
   order = Order.last
