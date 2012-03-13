@@ -63,16 +63,20 @@ Any records that get created from the frontend will need to be manually
 deleted. Something like this should work well enough:
 
 ```ruby
-it "creates an order" do
-    visit '/create_order'
-    within('#form') do
-        fill_in 'First name', :with => "TestXXX_First"
-        fill_in 'Amount', :with => 1
-    end
-    click_on 'Submit'
-    order = Order.last
-    order.FirstName__c.should eq("TestXXX_First")
-    order.delete
+feature "Create orders" do
+
+  scenario "Filling in valid attributes" do
+      visit '/create_order'
+      within('#form') do
+          fill_in 'First name', :with => "TestXXX_First"
+          fill_in 'Amount', :with => 1
+      end
+      click_on 'Submit'
+      order = Order.last
+      order.FirstName__c.should eq("TestXXX_First")
+      order.delete
+  end
+
 end
 ```
 
