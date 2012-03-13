@@ -41,6 +41,26 @@ CapybaraSfdc.configure do |config|
 end
 ```
 
+Then create your request specs:
+
+```ruby
+require 'spec_helper'
+
+describe "My App", :type => :request do
+  let(:account) do
+    db.materialize('User')
+    db.materialize('Account')
+    Account.new(:Name => 'test', :OwnerId => User.first.Id).save
+  end
+
+  # After each test runs, any created sobjects will be removed.
+  it "does something with the account" do
+    visit '/'
+    page.should have_content(account.Name)
+  end
+end
+```
+
 
 ## Contributing
 
