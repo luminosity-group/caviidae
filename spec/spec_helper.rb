@@ -24,5 +24,3 @@ Caviidae.configure do |config|
   config.password       = ENV['SFDC_PASSWORD']
   config.security_token = ENV['SFDC_SECURITY_TOKEN']
 end
-
-Caviidae.connect
