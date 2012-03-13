@@ -1,4 +1,4 @@
-# Capybara SFDC
+# Caviidae
 
 This is a gem that provides helpers for integration testing Visualforce apps
 with Capybara, RSpec and the Databasedotcom gem. It makes use of the databasedotcom gem to allow you to use
@@ -8,7 +8,7 @@ fixtures that are automatically cleaned up between specs.
 
 Add this line to your application's Gemfile:
 
-    gem 'capybara_sfdc'
+    gem 'caviidae'
 
 And then execute:
 
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install capybara_sfdc
+    $ gem install caviidae
 
 ## Usage
 
@@ -32,7 +32,7 @@ require "capybara/rspec"
 
 Capybara.app_host = 'https://www.google.com'
 
-CapybaraSfdc.configure do |config|
+Caviidae.configure do |config|
   config.client_id      = ENV['SFDC_CLIENT_ID']
   config.client_secret  = ENV['SFDC_CLIENT_SECRET']
   config.username       = ENV['SFDC_USERNAME']

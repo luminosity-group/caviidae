@@ -16,7 +16,7 @@ end
 Capybara.default_driver = :firefox_no_ssl
 Capybara.app_host = 'https://www.google.com'
 
-CapybaraSfdc.configure do |config|
+Caviidae.configure do |config|
   config.client_id      = ENV['SFDC_CLIENT_ID']
   config.client_secret  = ENV['SFDC_CLIENT_SECRET']
   config.username       = ENV['SFDC_USERNAME']

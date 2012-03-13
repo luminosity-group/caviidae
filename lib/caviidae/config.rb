@@ -1,8 +1,8 @@
-require 'capybara_sfdc/databasedotcom'
-require 'capybara_sfdc/rspec'
+require 'caviidae/databasedotcom'
+require 'caviidae/rspec'
 require 'rspec'
 
-module CapybaraSfdc
+module Caviidae
   class << self
     def configuration
       @configuration ||= Configuration.new
@@ -21,7 +21,7 @@ module CapybaraSfdc
       ::RSpec.configure do |config|
         config.before(:each) { client.cleanup }
         config.after(:each)  { client.cleanup }
-        config.include ::CapybaraSfdc::RSpec::Helpers
+        config.include ::Caviidae::RSpec::Helpers
       end if configuration.rspec
       @client = client
     end
