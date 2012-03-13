@@ -29,6 +29,7 @@ require "pp"
 require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
+require "caviidae/rspec"
 
 Capybara.app_host = 'https://www.google.com'
 
