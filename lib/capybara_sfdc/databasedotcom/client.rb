@@ -16,20 +16,21 @@ module Databasedotcom
       id = JSON.parse(result.body)["id"]
       set_value(new_object, "Id", id, "id")
       store(new_object)
-      puts "Created"
       new_object
     end
 
     def store(sobject)
-      @created ||= []
-      @created << sobject
+      created << sobject
     end
 
     def cleanup
-      @created.each do |sobject|
+      created.each do |sobject|
         sobject.delete
       end
-      @created = []
+    end
+
+    def created
+      @created ||= []
     end
   
   end
