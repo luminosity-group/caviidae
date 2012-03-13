@@ -1,1 +1,2 @@
-require 'capybara_sfdc/databasedotcom/client'
+require 'databasedotcom'
+require 'caviidae/databasedotcom/client'
