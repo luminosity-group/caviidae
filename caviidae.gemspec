@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Caviidae::VERSION
 
   gem.add_dependency "capybara"
-  gem.add_dependency "databasedotcom"
+  gem.add_dependency "databasedotcom", "1.3.0"
 
   gem.add_development_dependency "rspec"
 end
