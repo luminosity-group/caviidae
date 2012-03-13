@@ -71,7 +71,7 @@ it "creates an order" do
     end
     click_on 'Submit'
     order = Order.last
-    order.last.FirstName__c.should eq("TestXXX_First")
+    order.FirstName__c.should eq("TestXXX_First")
     order.delete
 end
 ```
