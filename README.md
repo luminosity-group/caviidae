@@ -1,7 +1,7 @@
 # Capybara SFDC
 
 This is a gem that provides helpers for integration testing Visualforce apps
-with Capybara. It makes use of the databasedotcom gem to allow you to use
+with Capybara, RSpec and the Databasedotcom gem. It makes use of the databasedotcom gem to allow you to use
 fixtures that are automatically cleaned up between specs.
 
 ## Installation
