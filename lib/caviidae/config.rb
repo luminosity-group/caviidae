@@ -1,6 +1,4 @@
 require 'caviidae/databasedotcom'
-require 'caviidae/rspec'
-require 'rspec'
 
 module Caviidae
   class << self
@@ -11,10 +9,6 @@ module Caviidae
     # Pass in a block to configure
     def configure
       yield configuration
-      ::RSpec.configure do |config|
-        config.after(:each) { Caviidae.db.cleanup }
-        config.include ::Caviidae::RSpec::Helpers
-      end if configuration.rspec
     end
   end
 
@@ -32,12 +26,8 @@ module Caviidae
     # Login host. Defaults to login.salesforce.com
     attr_accessor :host
 
-    # Auto config rspec
-    attr_accessor :rspec
-
     def initialize
       @security_token = "login.salesforce.com"
-      @rspec = true
     end
   end
 end

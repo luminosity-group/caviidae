@@ -4,6 +4,7 @@ require "pp"
 require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
+require "caviidae/rspec"
 
 Capybara.register_driver :firefox_no_ssl do |app|
   require 'selenium/webdriver'
