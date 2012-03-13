@@ -63,10 +63,6 @@ Any records that get created from the frontend will need to be manually
 deleted. Something like this should work well enough:
 
 ```ruby
-after(:each) do
-    Order.last.delete
-end
-
 it "creates an order" do
     visit '/create_order'
     within('#form') do
@@ -74,7 +70,9 @@ it "creates an order" do
         fill_in 'Amount', :with => 1
     end
     click_on 'Submit'
-    User.last.FirstName__c.should eq("TestXXX_First")
+    order = Order.last
+    order.last.FirstName__c.should eq("TestXXX_First")
+    order.delete
 end
 ```
 
