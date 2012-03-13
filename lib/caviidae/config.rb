@@ -8,22 +8,13 @@ module Caviidae
       @configuration ||= Configuration.new
     end
 
-    # Retrieve the databasedotcom client
-    def client
-      @client
-    end
-
     # Pass in a block to configure
     def configure
       yield configuration
-      client = Databasedotcom::Client.new :client_id => configuration.client_id, :client_secret => configuration.client_secret, :host => configuration.host
-      client.authenticate :username => configuration.username, :password => "#{CGI::escape(configuration.password)}#{configuration.security_token}"
       ::RSpec.configure do |config|
-        config.before(:each) { client.cleanup }
-        config.after(:each)  { client.cleanup }
+        config.after(:each) { Caviidae.db.cleanup }
         config.include ::Caviidae::RSpec::Helpers
       end if configuration.rspec
-      @client = client
     end
   end
 

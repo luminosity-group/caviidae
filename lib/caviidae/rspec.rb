@@ -1,11 +1,9 @@
-require 'caviidae/rspec/config.rb'
-
 module Caviidae
   module RSpec
     module Helpers
 
       def db
-        ::Caviidae.client
+        ::Caviidae.db
       end
       
     end
