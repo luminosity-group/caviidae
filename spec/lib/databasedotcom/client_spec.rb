@@ -10,4 +10,8 @@ describe Databasedotcom do
   it "does something" do
     puts account
   end
+
+  it "does it again" do
+    puts account
+  end
 end

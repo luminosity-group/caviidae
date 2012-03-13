@@ -27,6 +27,7 @@ module Databasedotcom
       created.each do |sobject|
         sobject.delete
       end
+      @created = []
     end
 
     def created
