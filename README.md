@@ -59,6 +59,25 @@ describe "My App", :type => :request do
 end
 ```
 
+Any records that get created from the frontend will need to be manually
+deleted. Something like this should work well enough:
+
+```ruby
+after(:each) do
+    Order.last.delete
+end
+
+it "creates an order" do
+    visit '/create_order'
+    within('#form') do
+        fill_in 'First name', :with => "TestXXX_First"
+        fill_in 'Amount', :with => 1
+    end
+    click_on 'Submit'
+    User.last.FirstName__c.should eq("TestXXX_First")
+end
+```
+
 
 ## Contributing
 
