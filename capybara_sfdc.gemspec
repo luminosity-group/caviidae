@@ -4,8 +4,8 @@ require File.expand_path('../lib/capybara_sfdc/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Eric J. Holmes"]
   gem.email         = ["eric@ejholmes.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Gem to help with integration testing of visualforce apps with capybara}
+  gem.summary       = %q{Gem to help with integration testing of visualforce apps with capybara}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
