@@ -29,7 +29,7 @@ module Caviidae
     attr_accessor :materialize
 
     def initialize
-      @security_token = "login.salesforce.com"
+      @host = "login.salesforce.com"
       @materialize = []
     end
   end
