@@ -26,6 +26,7 @@ Include the following in your `spec_helper.rb`:
 require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
+require "caviidae"
 require "caviidae/rspec"
 
 Capybara.default_driver = :selenium
